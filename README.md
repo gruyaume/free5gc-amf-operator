@@ -11,4 +11,4 @@ juju deploy free5gc-amf-operator --trust --channel=edge
 
 ## Image
 
-- **free5gc-amf**: towards5gs/free5gc-amf:v3.2.0
+- **[free5gc-amf](https://github.com/gruyaume/free5gc-amf-rock)**: ghcr.io/gruyaume/free5gc-amf:1.1.1

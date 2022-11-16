@@ -132,7 +132,7 @@ class Free5GcAMFOperatorCharm(CharmBase):
             {
                 "name": NETWORK_ATTACHMENT_DEFINITION_NAME,
                 "interface": "n2",
-                "ips": self._config_ngap_cidr,
+                "ips": [self._config_ngap_cidr],
                 "gateway": self._config_ngap_gateway,
             }
         ]
@@ -166,7 +166,7 @@ class Free5GcAMFOperatorCharm(CharmBase):
 
     @property
     def _config_ngap_cidr(self) -> str:
-        return self.model.config["ngap-ip"]
+        return self.model.config["ngap-cidr"]
 
     @property
     def _config_ngap_gateway(self) -> str:
@@ -204,7 +204,7 @@ class Free5GcAMFOperatorCharm(CharmBase):
                     "free5gc-amf": {
                         "override": "replace",
                         "startup": "enabled",
-                        "command": f"./amf -c {BASE_CONFIG_PATH}/{CONFIG_FILE_NAME}",
+                        "command": f"amf -c {BASE_CONFIG_PATH}/{CONFIG_FILE_NAME}",
                         "environment": self._environment_variables,
                     },
                 },
