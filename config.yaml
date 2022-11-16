@@ -1,0 +1,13 @@
+options:
+  ngap-ip:
+    type: string
+    default: 10.100.50.249
+    description: NGAP ip address
+  ngap-gateway:
+    type: string
+    default: 10.100.50.254
+    description: NGAP Gateway
+  interface:
+    type: string
+    default: eth0
+    description: Interface

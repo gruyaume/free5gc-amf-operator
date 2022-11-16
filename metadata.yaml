@@ -1,0 +1,22 @@
+name: free5gc-amf-operator
+display-name: free5gc amf operator
+summary: Free5gc amf operator
+description: Free5gc amf operator
+
+containers:
+  free5gc-amf:
+    resource: free5gc-amf-image
+    mounts:
+      - storage: amf-volume
+        location: /free5gc/config/
+
+resources:
+  free5gc-amf-image:
+    type: oci-image
+    description: OCI image for free5gc-amf
+    upstream-source: towards5gs/free5gc-amf:v3.2.0
+
+storage:
+  amf-volume:
+    type: filesystem
+    minimum-size: 1M
