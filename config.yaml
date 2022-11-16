@@ -1,7 +1,7 @@
 options:
-  ngap-ip:
+  ngap-cidr:
     type: string
-    default: 10.100.50.249
+    default: 10.100.50.249/29
     description: NGAP ip address
   ngap-gateway:
     type: string
