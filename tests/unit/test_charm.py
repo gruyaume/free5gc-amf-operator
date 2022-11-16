@@ -50,7 +50,7 @@ class TestCharm(unittest.TestCase):
 
         self.harness.set_can_connect(container="free5gc-amf", val=True)
 
-        key_values = {"ngap-ip": "1.2.3.4", "ngap-gateway": "5.6.7.8", "interface": "ens1"}
+        key_values = {"ngap-cidr": "1.2.3.4", "ngap-gateway": "5.6.7.8", "interface": "ens1"}
         self.harness.update_config(key_values=key_values)
 
         patch_push.assert_called_with(
@@ -70,7 +70,7 @@ class TestCharm(unittest.TestCase):
             "services": {
                 "free5gc-amf": {
                     "override": "replace",
-                    "command": "./amf -c /free5gc/config/amfcfg.yaml",
+                    "command": "amf -c /free5gc/config/amfcfg.yaml",
                     "startup": "enabled",
                     "environment": {"GIN_MODE": "release"},
                 }
