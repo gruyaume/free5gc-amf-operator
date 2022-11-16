@@ -31,8 +31,9 @@ class TestCharm(unittest.TestCase):
     @patch("lightkube.Client.create")
     @patch("lightkube.Client.get")
     @patch("ops.model.Container.push")
+    @patch("lightkube.core.client.GenericSyncClient")
     def test_given_can_connect_to_workload_container_when_config_changed_then_config_file_is_written(  # noqa: E501
-        self, patch_push, patch_k8s_get, _, __
+        self, _, patch_push, patch_k8s_get, __, ___
     ):
         statefulset = StatefulSet(
             spec=StatefulSetSpec(
